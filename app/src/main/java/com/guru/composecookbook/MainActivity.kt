@@ -1,11 +1,13 @@
 package com.guru.composecookbook
 
-import AnimationScreen
+import com.guru.composecookbook.ui.animation.AnimationScreen
 import FaIcons
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.animation.Crossfade
+import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
@@ -25,9 +27,12 @@ import com.guru.composecookbook.ui.home.HomeScreen
 import com.guru.composecookbook.ui.learnwidgets.WidgetScreen
 import com.guru.composecookbook.ui.templates.TemplateScreen
 import com.guru.composecookbook.ui.utils.RotateIcon
+import com.guru.composecookbook.ui.utils.TestTags
 import com.guru.fontawesomecomposelib.FaIcon
 
 class MainActivity : ComponentActivity() {
+    @ExperimentalAnimationApi
+    @ExperimentalFoundationApi
     @ExperimentalMaterialApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,6 +66,8 @@ fun BaseView(
     }
 }
 
+@ExperimentalAnimationApi
+@ExperimentalFoundationApi
 @ExperimentalMaterialApi
 @Composable
 fun HomeScreenContent(
@@ -84,6 +91,8 @@ fun HomeScreenContent(
     }
 }
 
+@ExperimentalAnimationApi
+@ExperimentalFoundationApi
 @ExperimentalMaterialApi
 @Composable
 fun MainAppContent(appThemeState: MutableState<AppThemeState>) {
@@ -100,7 +109,7 @@ fun MainAppContent(appThemeState: MutableState<AppThemeState>) {
         BottomNavigationContent(
             modifier = Modifier
                 .semantics { contentDescription = bottomNavBarContentDescription }
-                .testTag("bottom_navigation_bar"),
+                .testTag(TestTags.BOTTOM_NAV_TEST_TAG),
             homeScreenState = homeScreenState
         )
     }
@@ -126,6 +135,7 @@ fun BottomNavigationContent(
                 animate = false
             },
             label = { Text(text = stringResource(id = R.string.navigation_item_home)) },
+            modifier = Modifier.testTag(TestTags.BOTTOM_NAV_HOME_TEST_TAG)
         )
         BottomNavigationItem(
             icon = {
@@ -142,7 +152,8 @@ fun BottomNavigationContent(
                 homeScreenState.value = BottomNavType.WIDGETS
                 animate = false
             },
-            label = { Text(text = stringResource(id = R.string.navigation_item_widgets)) }
+            label = { Text(text = stringResource(id = R.string.navigation_item_widgets)) },
+            modifier = Modifier.testTag(TestTags.BOTTOM_NAV_WIDGETS_TEST_TAG)
         )
         BottomNavigationItem(
             icon = {
@@ -158,7 +169,9 @@ fun BottomNavigationContent(
                 homeScreenState.value = BottomNavType.ANIMATION
                 animate = true
             },
-            label = { Text(text = stringResource(id = R.string.navigation_item_animation)) }
+            label = { Text(text = stringResource(id = R.string.navigation_item_animation)) },
+            modifier = Modifier.testTag(TestTags.BOTTOM_NAV_ANIM_TEST_TAG)
+
         )
         BottomNavigationItem(
             icon = {
@@ -174,7 +187,8 @@ fun BottomNavigationContent(
                 homeScreenState.value = BottomNavType.DEMOUI
                 animate = false
             },
-            label = { Text(text = stringResource(id = R.string.navigation_item_demoui)) }
+            label = { Text(text = stringResource(id = R.string.navigation_item_demoui)) },
+            modifier = Modifier.testTag(TestTags.BOTTOM_NAV_DEMO_UI_TEST_TAG)
         )
         BottomNavigationItem(
             icon = {
@@ -191,16 +205,20 @@ fun BottomNavigationContent(
                 homeScreenState.value = BottomNavType.TEMPLATE
                 animate = false
             },
-            label = { Text(text = stringResource(id = R.string.navigation_item_profile)) }
+            label = { Text(text = stringResource(id = R.string.navigation_item_profile)) },
+            modifier = Modifier.testTag(TestTags.BOTTOM_NAV_TEMPLATE_TEST_TAG)
+
         )
     }
 }
 
+@ExperimentalAnimationApi
+@ExperimentalFoundationApi
 @ExperimentalMaterialApi
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
-    val appThemeState = mutableStateOf(AppThemeState(false, ColorPallet.GREEN))
+    val appThemeState = remember { mutableStateOf(AppThemeState(false, ColorPallet.GREEN)) }
     BaseView(appThemeState.value, null) {
         MainAppContent(appThemeState)
     }

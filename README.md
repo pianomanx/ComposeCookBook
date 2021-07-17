@@ -6,6 +6,7 @@
 <div align="center">
   A Collection of all Jetpack compose UI elements, Layouts, Widgets and Demo screens to see it's potential.
 </div>
+<br />
 <div align="center">
  <img src = "https://github.com/Gurupreet/ComposeCookBook/blob/master/screens/composelogo.png" width = "300px"/>
 </div>
@@ -14,8 +15,11 @@
 
 <div align="center">
     <a href = "https://developer.android.com/jetpack/androidx/versions/all-channel#december_16_2020">
-      <img src = "https://img.shields.io/badge/Jetpack%20Compose-1.0.0%20beta02-brightgreen" />
+      <img src = "https://img.shields.io/badge/Jetpack%20Compose-1.0.0%20rc02-brightgreen" />
     </a>
+  <a href = "https://github.com/Gurupreet/ComposeCookBook/actions/workflows/android.yml">
+      <img src = "https://github.com/Gurupreet/ComposeCookBook/actions/workflows/android.yml/badge.svg" />
+  </a>
   <a href = "https://github.com/Gurupreet/ComposeCookBook/network/">
     <img src = "https://img.shields.io/github/forks/Gurupreet/ComposeCookBook" />
   </a>
@@ -46,12 +50,16 @@ List & Layouts             |  Widgets and building blocks| Animations | Theme
 :-------------------------:|:-------------------------: | :-------------------------: | :-------------------------:
 ![](https://media.giphy.com/media/WOlo2cTDdjGkgdAJQK/giphy.gif)  |  ![](https://media.giphy.com/media/RkEyxCn43aX1MoIdcx/giphy.gif) | ![](https://media.giphy.com/media/pZfwwwOlKQtiyJFPr2/giphy.gif) | ![](https://media.giphy.com/media/kPt0nCCWAcahhJsJh6/giphy.gif)
 
+Flinger                    | 
+:-------------------------:|
+![](https://media.giphy.com/media/OLa80kZcBXLEZlKiFY/giphy.gif) |
+
 ### Demo UI
 Spotify             |  Instagram Demo | Twitter, Gmail, Youtube                       | Profile
 :-------------------------:|:-------------------------: | :-------------------------: | :-------------------------:
 ![](https://media.giphy.com/media/IddlpOpdboqJwdhxMS/giphy.gif)  |  ![](https://media.giphy.com/media/XSh4SKvAgr6Moj3SDH/giphy.gif) | ![](https://media.giphy.com/media/sEe1vREivaK7ieMPYj/giphy.gif) | ![](https://media.giphy.com/media/n3UTF9SzLpBGneFyj3/giphy.gif)
 
-Gmail full             |  Tiktok                   
+Gmail full             |  Tiktok
 :-------------------------:|:-------------------------:
 ![](https://media.giphy.com/media/hrOVD7rbST5shclGkQ/giphy.gif)  |  ![](https://media.giphy.com/media/cimocpJnmSBeJIPxu2/giphy.gif)
 
@@ -62,7 +70,7 @@ CryptoApp MVVM             |  MovieApp MVI              | Dating APP DEMO UI
 ![](https://media.giphy.com/media/OtJXUCh2ITINfKuTc0/giphy.gif)  |  ![](https://media.giphy.com/media/BfHMR2EMJkzB1agvpk/giphy.gif) | ![](https://media.giphy.com/media/tVXmwM2ryGlhCcf3Kl/giphy.gif)
 
 ### Advance lists and animations
-Shimmer Lists             | List Scroll Animations       
+Shimmer Lists             | List Scroll Animations
 :-------------------------:|:-------------------------: 
 ![](https://media.giphy.com/media/VQof1yEEbEgcqgY7WW/giphy.gif)  |  ![](https://media.giphy.com/media/hhpnI1beJr6gRi4btK/giphy.gif)
 
@@ -77,7 +85,7 @@ Adding card details        |
 </a>
 
 ## How to get started
-Please get **Android Studio Arctic Fox 2020.3.1 Canary 4** or above to build this project [from here](https://developer.android.com/studio/preview/).
+Please get **Android Studio Arctic Fox 2020.3.1 Canary 4** or above [from here](https://developer.android.com/studio/preview/) and use **JDK 11** to build this project.
 
 ## Features & Where to start
 - __Widgets:__ Widgets Screen show case all the available components to build UI.
@@ -85,22 +93,22 @@ Please get **Android Studio Arctic Fox 2020.3.1 Canary 4** or above to build thi
 - __Demo UI:__ Learn how demo UI have been made by using layouts, listviews and widgets.
 - __Animations:__ Animations are very interesting in compose. Checkout single value animations to get started.
 - __UI Tests:__ Checkout UI tests to understand how we can test compose UI.
-- __Others:__ After the above steps feel free to deep dive into Tablayouts, carousel, Dialogs and BottomSheets 
+- __Others:__ After the above steps feel free to deep dive into Tablayouts, carousel, Dialogs and BottomSheets
 
 
 ## Coming Soon
 - Some of the features that will be available in coming weeks
-  - Advance lists: Pull Refresh, Swipe lsits etc
+  - Advance lists: Pull Refresh, Swipe lists etc
   - Clean Architecture Sample with coroutines.
-  - Advance canvas drawing. 
-  Much more in pipeline stay tuned!!
+  - Advance canvas drawing.
+    Much more in pipeline stay tuned!!
 
 ## Official Documentations
 - Official Google Documentation
   - [Compose Pathway](https://developer.android.com/courses/pathways/compose)
   - [Jetpack compose](https://developer.android.com/jetpack/compose)
   - [Jetpack compose Samples](https://github.com/android/compose-samples)
-  
+
 - [Compose Academy ](https://compose.academy/)
 
 ## Contribution Info
@@ -110,7 +118,7 @@ Please get **Android Studio Arctic Fox 2020.3.1 Canary 4** or above to build thi
   - Any Demo UI please add to Demo UI section
   - Try not to add new Icons/Images unless must be needed.
   - Please make sure whatever you add also supports dark mode as well.
-  Thanks happy coding 
+    Thanks happy coding
 
 
 ## Please Share & Star the repository to keep me motivated.

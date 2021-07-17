@@ -9,12 +9,13 @@ import androidx.activity.compose.setContent
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
+import com.guru.composecookbook.charts.Charts
+import com.guru.composecookbook.comingsoon.ComingSoon
+import com.guru.composecookbook.login.LoginOnboarding
+import com.guru.composecookbook.onboarding.OnBoardingScreen
+import com.guru.composecookbook.paymentcard.AddPaymentScreen
+import com.guru.composecookbook.profile.ProfileScreen
 import com.guru.composecookbook.theme.ComposeCookBookTheme
-import com.guru.composecookbook.ui.templates.logins.LoginOnboarding
-import com.guru.composecookbook.ui.templates.onboardings.OnBoardingScreen1
-import com.guru.composecookbook.ui.templates.payment.AddPaymentCard
-import com.guru.composecookbook.ui.templates.profile.ProfileScreen
-import com.guru.composecookbook.ui.utils.ComingSoon
 
 class TemplatesActivity : ComponentActivity() {
 
@@ -52,9 +53,9 @@ fun TemplateApp(templateType: String) {
     when (templateType) {
         "Profiles" -> ProfileScreen()
         "Login" -> LoginOnboarding()
-        "On-boarding" -> OnBoardingScreen1 { }
+        "On-boarding" -> OnBoardingScreen { }
         "Charts" -> Charts()
-        "Adding Payment Card" -> AddPaymentCard()
+        "Adding Payment Card" -> AddPaymentScreen()
         else -> ComingSoon()
     }
 }
