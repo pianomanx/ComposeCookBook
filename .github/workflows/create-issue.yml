@@ -1,0 +1,41 @@
+name: Create Issue
+
+on:
+  workflow_dispatch:
+    inputs:
+      title:
+        description: 'Issue Title'
+        required: true
+      body:
+        description: 'Issue Body'
+        required: true
+      assign_to_copilot:
+        description: 'Assign to Copilot? (true/false)'
+        required: false
+        default: 'false'
+
+jobs:
+  create-issue:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+
+    steps:
+      - name: Create GitHub Issue
+        id: create_issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = '${{ github.event.inputs.title }}';
+            const body = '${{ github.event.inputs.body }}';
+            const assignToCopilot = '${{ github.event.inputs.assign_to_copilot }}' === 'true';
+
+            const issueResponse = await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: title,
+              body: body,
+              assignees: assignToCopilot ? ['copilot'] : []
+            });
+
+            console.log(`Issue created: ${issueResponse.data.html_url}`);
